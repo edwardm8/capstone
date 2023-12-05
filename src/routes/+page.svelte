@@ -1,13 +1,13 @@
 <script>
 	import { browser } from '$app/environment'
+	import '../app.postcss';
 	import * as THREE from "three"
-	// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 	
 	if (browser){
 		const canvas = document.querySelector('canvas.webgl')
-		console.log(canvas)
+	
 		const scene = new THREE.Scene();
 
 		const sizes = {
@@ -110,6 +110,8 @@
 	}
 </script>
 
-<section>
-	Hello world!
-</section>
+<div class="h-screen">
+	<section class="text-stuff">
+		<h2>Hello World</h2>
+	</section>
+</div>
