@@ -51,6 +51,7 @@
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 		document.body.appendChild( renderer.domElement );
 
+		//lights
 		const ambientLight = new THREE.AmbientLight(0xffffff, 2.4)
 		scene.add(ambientLight)
 
@@ -66,26 +67,27 @@
 		scene.add(directionalLight)
 
 		gltfLoader.load(
-    '../assets/3d/Duck/glTF/Duck.gltf',
+    // '../assets/3d/Duck/glTF/Duck.gltf',
+		'../assets/3d/donut-test/scene.gltf',
     (gltf) =>
     {
-        // console.log('success')
-        // console.log(gltf)
-				scene.add(gltf.scene.children[0])
+        console.log('success')
+        gltf.scene.scale.set(10, 10, 10)
+				scene.add(gltf.scene)
     },
     (progress) =>
     {
-        // console.log('progress')
-        // console.log(progress)
+        console.log('progress')
+        console.log(progress)
     },
     (error) =>
     {
-        // console.log('error')
-        // console.log(error)
+        console.log('error')
+        console.log(error)
     }
 	)
 
-			const clock = new THREE.Clock()
+		const clock = new THREE.Clock()
 		let previousTime = 0
 
 		const tick = () =>
@@ -104,7 +106,7 @@
 				window.requestAnimationFrame(tick)
 		}
 
-tick()
+		tick()
 	}
 </script>
 
