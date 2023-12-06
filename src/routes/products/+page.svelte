@@ -1,132 +1,76 @@
 <script>
-  import '../../app.postcss';
-  import { donutList } from "$lib/data.js";
-  import { browser } from '$app/environment'
-  import { onMount } from 'svelte';
-	import * as THREE from "three"
-	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-
-  onMount(async () => {
-		const canvas = document.querySelector('canvas.product-gl')
-	
-		const scene = new THREE.Scene();
-
-		const sizes = {
-			width: window.innerWidth,
-			height: window.innerHeight
-		}
-
-		window.addEventListener('resize', () =>
-		{
-			// Update sizes
-			sizes.width = window.innerWidth
-			sizes.height = window.innerHeight
-
-			// Update camera
-			camera.aspect = sizes.width / sizes.height
-			camera.updateProjectionMatrix()
-
-			// Update renderer
-			renderer.setSize(sizes.width, sizes.height)
-			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-		})
-
-		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-		camera.position.set(4,2, 0)
-		scene.add(camera)
-		
-		// Controls
-		const controls = new OrbitControls(camera, canvas)
-		controls.target.set(0, 0.75, 0)
-		controls.enableDamping = true
-		controls.autoRotate = true
-
-		// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-		const gltfLoader = new GLTFLoader()
-
-		const renderer = new THREE.WebGLRenderer({
-    	canvas: canvas
-		})
-		renderer.shadowMap.enabled = true
-		renderer.shadowMap.type = THREE.PCFSoftShadowMap
-		renderer.setSize( window.innerWidth, window.innerHeight );
-		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-		document.body.appendChild( renderer.domElement );
-
-		//lights
-		const ambientLight = new THREE.AmbientLight(0xffffff, 2.4)
-		scene.add(ambientLight)
-
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 1.8)
-		directionalLight.castShadow = true
-		directionalLight.shadow.mapSize.set(1024, 1024)
-		directionalLight.shadow.camera.far = 15
-		directionalLight.shadow.camera.left = - 7
-		directionalLight.shadow.camera.top = 7
-		directionalLight.shadow.camera.right = 7
-		directionalLight.shadow.camera.bottom = - 7
-		directionalLight.position.set(5, 5, 5)
-		scene.add(directionalLight)
-
-
-		//loop genereate donuts
-		
-			let donutType = Math.floor(Math.random() * 2)
-			let donutLoad;
-
-			if(donutType == 0)
-				donutLoad = "../../assets/3d/chocolate/chocolate.gltf"
-			else if(donutType == 1)
-				donutLoad = "../../assets/3d/donut-test/scene.gltf"
-			gltfLoader.load(
-				donutLoad,
-			(gltf) =>
-			{
-				console.log('success')
-					gltf.scene.scale.set(5, 5, 5)
-					scene.add(gltf.scene)
-			},
-			(progress) =>
-			{
-					console.log('progress')
-					console.log(progress)
-			},
-			(error) =>
-			{
-					console.log('error')
-					console.log(error)
-			}
-			)
-		
-
-		const clock = new THREE.Clock()
-		let previousTime = 0
-
-		const tick = () =>
-		{
-				const elapsedTime = clock.getElapsedTime()
-				const deltaTime = elapsedTime - previousTime
-				previousTime = elapsedTime
-
-				// Update controls
-				controls.update(deltaTime)
-
-				// Render
-				renderer.render(scene, camera)
-
-				// Call tick again on the next frame
-				window.requestAnimationFrame(tick)
-		}
-
-		tick()
-	});
+import '../../app.postcss';
+import Card from '$lib/components/card.svelte'
+import { donutList } from "$lib/data.js";
 </script>
 
-<canvas class="product-gl"></canvas>
-<div class="h-screen">
-	<section class="text-stuff">
-		<h2>Product Page</h2>
-	
-	</section>
-</div>
+<style>
+  
+  h2 {
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 2.5rem;
+  color: white;
+  line-height: 2rem;
+  }
+  
+
+  a {
+    text-decoration: none;
+    color: black;
+    max-width: max-content;
+  }
+
+  img {
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 5%;
+    height: 50%;
+  }
+ 
+  ul {
+  overflow: hidden;
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  padding: 2rem;
+}
+
+  p {
+    display: flex;
+    color: white;
+    padding: 2rem;
+  }
+
+
+  @media only screen and (max-width: 750px) {
+  ul {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  
+}
+</style>
+
+<svelte:head>
+  <title>
+    Products
+  </title>
+</svelte:head>
+
+<ul>
+<h1>Gallery items</h1>
+{#each donutList as {href,name,pic,attribute,id,flavourText}}
+      <Card>
+        <a href="/">
+          <header><h2>{name}</h2></header>
+          <img src={pic} alt={attribute}>
+          <p>
+            {flavourText}
+          </p>
+        </a>
+      </Card>
+    {/each}
+</ul>
