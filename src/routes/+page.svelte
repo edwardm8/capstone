@@ -5,6 +5,7 @@
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 	
+
 	if (browser){
 		const canvas = document.querySelector('canvas.webgl')
 	
@@ -31,13 +32,14 @@
 		})
 
 		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-		camera.position.set(2, 2, 2)
+		camera.position.set(4,2, 0)
 		scene.add(camera)
-
+		
 		// Controls
 		const controls = new OrbitControls(camera, canvas)
 		controls.target.set(0, 0.75, 0)
 		controls.enableDamping = true
+		controls.autoRotate = true
 
 		// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 		const gltfLoader = new GLTFLoader()
@@ -66,26 +68,41 @@
 		directionalLight.position.set(5, 5, 5)
 		scene.add(directionalLight)
 
-		gltfLoader.load(
-    // '../assets/3d/Duck/glTF/Duck.gltf',
-		'../assets/3d/donut-test/scene.gltf',
-    (gltf) =>
-    {
-        console.log('success')
-        gltf.scene.scale.set(10, 10, 10)
-				scene.add(gltf.scene)
-    },
-    (progress) =>
-    {
-        console.log('progress')
-        console.log(progress)
-    },
-    (error) =>
-    {
-        console.log('error')
-        console.log(error)
-    }
-	)
+
+		//loop genereate donuts
+		for(let i = 0; i < 10; i++){
+			let donutType = Math.floor(Math.random() * 2)
+			let donutLoad;
+
+			if(donutType == 0)
+				donutLoad = "../assets/3d/chocolate/chocolate.gltf"
+			else if(donutType == 1)
+				donutLoad = "../assets/3d/donut-test/scene.gltf"
+			gltfLoader.load(
+				donutLoad,
+			(gltf) =>
+			{
+				console.log('success')
+					gltf.scene.scale.set(5, 5, 5)
+					gltf.scene.position.x = (Math.random() - 0.5) * 10
+					gltf.scene.position.y = (Math.random() - 0.5) * 10
+					gltf.scene.position.z = (Math.random() - 0.5) * 10
+					gltf.scene.rotation.x = Math.random() * Math.PI
+					gltf.scene.rotation.y = Math.random() * Math.PI
+					scene.add(gltf.scene)
+			},
+			(progress) =>
+			{
+					console.log('progress')
+					console.log(progress)
+			},
+			(error) =>
+			{
+					console.log('error')
+					console.log(error)
+			}
+			)
+		}
 
 		const clock = new THREE.Clock()
 		let previousTime = 0
@@ -97,7 +114,7 @@
 				previousTime = elapsedTime
 
 				// Update controls
-				controls.update()
+				controls.update(deltaTime)
 
 				// Render
 				renderer.render(scene, camera)
@@ -108,10 +125,12 @@
 
 		tick()
 	}
+
 </script>
 
 <div class="h-screen">
 	<section class="text-stuff">
 		<h2>Hello World</h2>
+		<p>Small Description</p>
 	</section>
 </div>
