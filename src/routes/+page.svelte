@@ -4,12 +4,17 @@
 	import * as THREE from "three"
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-	
+	import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 
 	if (browser){
 		const canvas = document.querySelector('canvas.webgl')
 	
 		const scene = new THREE.Scene();
+
+		const dracoLoader = new DRACOLoader();
+		dracoLoader.setDecoderPath('../draco/')
+		const gltfLoader = new GLTFLoader()
+		gltfLoader.setDRACOLoader(dracoLoader)
 
 		const sizes = {
 			width: window.innerWidth,
@@ -40,10 +45,7 @@
 		controls.target.set(0, 0.75, 0)
 		controls.enableDamping = true
 		controls.autoRotate = true
-
-		// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-		const gltfLoader = new GLTFLoader()
-
+		
 		const renderer = new THREE.WebGLRenderer({
     	canvas: canvas
 		})
