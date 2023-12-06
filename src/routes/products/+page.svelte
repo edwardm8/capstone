@@ -1,13 +1,14 @@
 <script>
-	import { browser } from '$app/environment'
-	import '../app.postcss';
+  import '../../app.postcss';
+  import { donutList } from "$lib/data.js";
+  import { browser } from '$app/environment'
+  import { onMount } from 'svelte';
 	import * as THREE from "three"
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-	
 
-	if (browser){
-		const canvas = document.querySelector('canvas.webgl')
+  onMount(async () => {
+		const canvas = document.querySelector('canvas.product-gl')
 	
 		const scene = new THREE.Scene();
 
@@ -70,25 +71,20 @@
 
 
 		//loop genereate donuts
-		for(let i = 0; i < 10; i++){
+		
 			let donutType = Math.floor(Math.random() * 2)
 			let donutLoad;
 
 			if(donutType == 0)
-				donutLoad = "../assets/3d/chocolate/chocolate.gltf"
+				donutLoad = "../../assets/3d/chocolate/chocolate.gltf"
 			else if(donutType == 1)
-				donutLoad = "../assets/3d/donut-test/scene.gltf"
+				donutLoad = "../../assets/3d/donut-test/scene.gltf"
 			gltfLoader.load(
 				donutLoad,
 			(gltf) =>
 			{
 				console.log('success')
 					gltf.scene.scale.set(5, 5, 5)
-					gltf.scene.position.x = (Math.random() - 0.5) * 10
-					gltf.scene.position.y = (Math.random() - 0.5) * 10
-					gltf.scene.position.z = (Math.random() - 0.5) * 10
-					gltf.scene.rotation.x = Math.random() * Math.PI
-					gltf.scene.rotation.y = Math.random() * Math.PI
 					scene.add(gltf.scene)
 			},
 			(progress) =>
@@ -102,7 +98,7 @@
 					console.log(error)
 			}
 			)
-		}
+		
 
 		const clock = new THREE.Clock()
 		let previousTime = 0
@@ -124,14 +120,13 @@
 		}
 
 		tick()
-	}
-
+	});
 </script>
 
-<canvas class="webgl"></canvas>
+<canvas class="product-gl"></canvas>
 <div class="h-screen">
 	<section class="text-stuff">
-		<h2>Hello World</h2>
-		<p>Small Description</p>
+		<h2>Product Page</h2>
+	
 	</section>
 </div>
