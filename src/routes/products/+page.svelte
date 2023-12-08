@@ -61,10 +61,9 @@ import { donutList } from "$lib/data.js";
 </svelte:head>
 
 <ul>
-<h1>Gallery items</h1>
 {#each donutList as {href,name,pic,attribute,id,flavourText}}
       <Card>
-        <a href="/">
+        <a href="/products/{id}">
           <header><h2>{name}</h2></header>
           <img src={pic} alt={attribute}>
           <p>

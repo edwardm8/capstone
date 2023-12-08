@@ -1,14 +1,16 @@
 <script>
-  import '../../app.postcss';
+  import '../../../app.postcss';
   import { donutList } from "$lib/data.js";
   import { onMount } from 'svelte';
 	import * as THREE from "three"
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-  
+	export let data
+  const { post } = data;
+
   onMount(async () => {
-		const canvas = document.querySelector('canvas.product-gl')
+		const canvas = document.querySelector('canvas.webgl')
 	
 		const scene = new THREE.Scene();
 
@@ -33,14 +35,13 @@
 		})
 
 		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-		camera.position.set(4,2, 0)
+		camera.position.set(1,1,1)
 		scene.add(camera)
 		
 		// Controls
 		const controls = new OrbitControls(camera, canvas)
-		controls.target.set(0, 0.75, 0)
+		controls.target.set(0, 0, 0)
 		controls.enableDamping = true
-		controls.autoRotate = true
 
 		// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 		const gltfLoader = new GLTFLoader()
@@ -69,22 +70,17 @@
 		directionalLight.position.set(5, 5, 5)
 		scene.add(directionalLight)
 
-
+	
 		//loop genereate donuts
-		
-			let donutType = Math.floor(Math.random() * 2)
-			let donutLoad;
-
-			if(donutType == 0)
-				donutLoad = "../../assets/3d/chocolate/chocolate.gltf"
-			else if(donutType == 1)
-				donutLoad = "../../assets/3d/donut-test/scene.gltf"
 			gltfLoader.load(
-				donutLoad,
+				post.href,
+				// "../../assets/3d/chocolate/chocolate.gltf",
 			(gltf) =>
 			{
-				console.log('success')
+					console.log(gltf)
+
 					gltf.scene.scale.set(5, 5, 5)
+					gltf.scene.position.z = -2.3
 					scene.add(gltf.scene)
 			},
 			(progress) =>
@@ -112,6 +108,11 @@
 				// Update controls
 				controls.update(deltaTime)
 
+				// //update mixed
+				// if(mixer !== null)
+				// 	mixer.update(deltaTime)
+	
+				
 				// Render
 				renderer.render(scene, camera)
 
@@ -120,13 +121,15 @@
 		}
 
 		tick()
+	
 	});
 </script>
 
-<canvas class="product-gl"></canvas>
-<div class="h-screen">
-	<section class="text-stuff">
-		<h2>Product Page</h2>
+<canvas class="webgl"></canvas>
 	
-	</section>
-</div>
+
+<section class="text-stuff">
+	<h2>Chocolate Donut</h2>
+</section>
+
+

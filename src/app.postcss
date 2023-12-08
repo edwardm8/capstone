@@ -10,28 +10,25 @@
 	font-display: swap;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .webgl
 {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     outline: none;
-		z-index:-1;
-}
-.product-gl
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
-		z-index:-1;
+    z-index:-1;
 }
 
 .text-stuff
 {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     position: relative;
     font-family: 'Cabin', sans-serif;
     color: #ffeded;
