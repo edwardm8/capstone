@@ -1,11 +1,10 @@
 <script>
   import '../../app.postcss';
-  import { donutList } from "$lib/data.js";
   import { onMount } from 'svelte';
 	import * as THREE from "three"
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 	import gsap from 'gsap'
+	import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 
 	export let data
   const { post } = data;
@@ -14,6 +13,11 @@
 		const canvas = document.querySelector('canvas.about')
 	
 		const scene = new THREE.Scene();
+
+		const dracoLoader = new DRACOLoader();
+		dracoLoader.setDecoderPath('../draco/')
+		const gltfLoader = new GLTFLoader()
+		gltfLoader.setDRACOLoader(dracoLoader)
 
 		const sizes = {
 			width: window.innerWidth,
@@ -59,7 +63,6 @@ cameraGroup.add(camera)
 	
 
 		
-		const gltfLoader = new GLTFLoader()
 		const objectsDistance = 2
 
 		const renderer = new THREE.WebGLRenderer({
