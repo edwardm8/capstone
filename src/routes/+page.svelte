@@ -72,20 +72,22 @@
 
 
 		//loop genereate donuts
-		for(let i = 0; i < 10; i++){
-			let donutType = Math.floor(Math.random() * 2)
+		for(let i = 0; i < 20; i++){
+			let donutType = Math.floor(Math.random() * 3)
 			let donutLoad;
 
 			if(donutType == 0)
-				donutLoad = "../assets/3d/chocolate/chocolate.gltf"
+				donutLoad = "../assets/3d/single-donuts/chocolate.gltf"
 			else if(donutType == 1)
 				donutLoad = "../assets/3d/donut-test/scene.gltf"
+			else if (donutType == 2)
+				donutLoad = "../assets/3d/single-donuts/blue.gltf"
 			gltfLoader.load(
 				donutLoad,
 			(gltf) =>
 			{
 				console.log('success')
-					gltf.scene.scale.set(5, 5, 5)
+					gltf.scene.scale.set(12, 12, 12)
 					gltf.scene.position.x = (Math.random() - 0.5) * 10
 					gltf.scene.position.y = (Math.random() - 0.5) * 10
 					gltf.scene.position.z = (Math.random() - 0.5) * 10

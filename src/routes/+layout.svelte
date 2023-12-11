@@ -11,7 +11,7 @@
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a class="hover:text-secondary-500" href="/">Home</a>
-				<a class="hover:text-secondary-500" href="/products">About</a>
+				<a class="hover:text-secondary-500" href="/about">About</a>
 				<a class="hover:text-secondary-500" href="/products">Products</a>
         <LightSwitch />
 			</svelte:fragment>
