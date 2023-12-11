@@ -23,6 +23,7 @@
   "type": "module",
   "dependencies": {
     "@threlte/core": "^7.0.5",
+    "gsap": "^3.12.3",
     "three": "^0.159.0"
   }
 }

@@ -132,9 +132,9 @@
 </script>
 
 <canvas class="webgl"></canvas>
-<div class="h-screen">
-	<section class="text-stuff">
-		<h2>Hello World</h2>
-		<p>Small Description</p>
-	</section>
-</div>
+
+<section class="h-screen flex flex-col justify-center items-center gap-4">
+	<h2 class="h1">Welcome</h2>
+	<p class="h2">Explore Our Donuts</p>
+	<a href="/products"  class="btn variant-filled-primary" data-sveltekit-preload-data="hover">Learn More</a>
+</section>
