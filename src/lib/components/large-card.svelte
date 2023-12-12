@@ -1,7 +1,4 @@
-<div class="flex ">
+<div class="flex h-screen justify-center">
   <slot />
 </div>
 
-<style>
-
-</style>

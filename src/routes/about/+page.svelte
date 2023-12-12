@@ -245,7 +245,7 @@ cameraGroup.add(camera)
 
 	<section class="text-stuff-right">
     <h2 class="h2">Always Fresh</h2>
-		<p class="max-w-xl  p-4">
+		<p class="max-w-xl p-4 p">
 			Welcome to Always Fresh Donuts, where indulgence meets perfection in every delightful bite!
 			Our passion for crafting exceptional donuts drives us to create a tempting array of flavors that redefine the art of sweet treats. 
 			Immerse yourself in the irresistible world of Always Fresh Donuts,
@@ -255,7 +255,7 @@ cameraGroup.add(camera)
 
 	<section class="text-stuff">
     <h2 class="h2">Award Winning</h2>
-		<p class="max-w-xl p-4">We pride ourselves on pushing the boundaries of traditional donut-making. 
+		<p class="max-w-xl p-4 p">We pride ourselves on pushing the boundaries of traditional donut-making. 
 			Our chefs are relentless in their pursuit of culinary innovation, constantly introducing new and exciting flavor profiles that set us apart as pioneers in the world of artisanal donuts.</p>
   </section>
   
