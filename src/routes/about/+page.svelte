@@ -162,7 +162,7 @@ cameraGroup.add(camera)
 		
 
 		let scrollY = window.scrollY
-		let currentSection = 0
+	
 
 		//scroll and greensock
 		window.addEventListener('scroll',() => {
@@ -172,23 +172,7 @@ cameraGroup.add(camera)
 			console.log(newSection)
 		
 
-			if(newSection >= 1 && newSection < 2){
-				currentSection = 1
-
-				gsap.to(
-					gltfTwo[0].rotation,
-					{
-						duration: 3,
-						ease: 'power2.inOut',
-						x: '+=6',
-						y: '+=3',
-						z: '+=1.5'
-					}
-        )
-			}
-			else if( newSection >= 2){
-				currentSection = newSection
-
+			if(newSection == 1){
 				gsap.to(
 					gltfTwo[1].rotation,
 					{
@@ -200,6 +184,19 @@ cameraGroup.add(camera)
 					}
         )
 			}
+			else if(newSection >=2){
+				gsap.to(
+					gltfTwo[0].rotation,
+					{
+						duration: 3,
+						ease: 'power2.inOut',
+						x: '+=6',
+						y: '+=3',
+						z: '+=1.5'
+					}
+        )
+			}
+			
 		})
 
 		const clock = new THREE.Clock()

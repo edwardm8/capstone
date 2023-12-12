@@ -9,7 +9,7 @@
 
 <style>
 .cards{
-  background-color:rgb(104 11 29);
+  background-color:#03396c;
   text-align: center;
   border-radius: 5%;
   max-width: 50ch;
@@ -21,7 +21,7 @@
 
 .cards:hover {
   scale: 115%;
-  background-color: #000;
+  background-color:#005b96;
   cursor: pointer;
 }
 

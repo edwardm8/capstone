@@ -47,8 +47,10 @@
 		controls.autoRotate = true
 		
 		const renderer = new THREE.WebGLRenderer({
-    	canvas: canvas
+    	canvas: canvas,
+			alpha: true
 		})
+		renderer.setClearAlpha(0)
 		renderer.shadowMap.enabled = true
 		renderer.shadowMap.type = THREE.PCFSoftShadowMap
 		renderer.setSize( window.innerWidth, window.innerHeight );

@@ -1,29 +1,73 @@
 export let donutList = [
-  { id:'1' , name: 'Chocolate Donut', description: 'A burger, short for hamburger, is a popular food item consisting of a cooked patty made from ground meat, typically beef,although other meats or plant-based alternatives can also be used. The patty is usually seasoned with various spices and grilled, fried, or broiled to achieve the desired level of doneness. It is then placed between two halves of a bun, which can be toasted or left as is. Burgers often come with a variety of toppings and condiments, such as lettuce, tomato, onions, pickles, cheese, ketchup, mustard, mayonnaise, and more. These toppings can be customized based on personal preference, allowing for a wide range of flavor combinations. Some burgers may also include additional ingredients like bacon, mushrooms, avocado, or special sauces to enhance the taste. Burgers are commonly served with side dishes like french fries, onion rings, coleslaw, or a salad. They are enjoyed by people of all ages and are a staple in many fast-food restaurants, diners, and backyard barbecues.', href: "../../assets/3d/chocolate/chocolate.gltf", pic:'../images/chocolate.png'
-  , attribute: "Burger", flavourText:"Indulge in the mouthwatering delight of our signature burger, crafted with the finest ingredients and expertly grilled to perfection." },
-  
-  { id:'2', name: 'Sprinkle', description: 'A bacon burger is a type of burger that includes bacon as one of its main ingredients. It typically consists of a beef patty, cooked to desired doneness, topped with crispy bacon strips. The bacon adds a smoky and savory flavor to the burger, complementing the beef. Additional toppings such as cheese, lettuce, tomato, onions, and condiments like ketchup or mayonnaise can be added based on personal preference. The burger is usually served on a bun and can be enjoyed with a side of fries or a salad.', href: '/products/', pic:'../images/sprinkle.png'
-  , attribute: "Bacon", flavourText:"Prepare your taste buds for an irresistible symphony of flavors with our sizzling bacon burger." },
-
-  { id:'3', name: 'Glaze', description: 'A chicken burger is a type of burger that features a chicken patty as the main ingredient instead of beef. The patty is typically made from ground or minced chicken meat, which is seasoned with various herbs, spices, and sometimes breadcrumbs to enhance its flavor and texture. The chicken patty is usually cooked by grilling, frying, or baking until it reaches a safe internal temperature. It is then placed between two halves of a bun, similar to a traditional burger. Chicken burgers can be customized with a variety of toppings and condiments, such as lettuce, tomato, onions, pickles, cheese, mayonnaise, mustard, barbecue sauce, or any other preferred additions. These toppings can be adjusted to suit personal taste preferences. Chicken burgers are a popular alternative to beef burgers, offering a lighter and leaner option. They are commonly found on menus at fast-food chains, restaurants, and food trucks. They can be served with a side of fries, coleslaw, or a salad to complete the meal.', href: '/products/', pic:'../images/glaze.png'
-  , attribute: "Chicken-Burger", flavourText:"Embark on a culinary adventure with our delectable chicken burger, a true delight for poultry enthusiasts." },
-
-  { id:'4', name: 'Berry Blast', description: 'Chicken strips, also known as chicken tenders or chicken fingers, are a popular food item made from boneless, skinless chicken breast meat. They are typically cut into long, thin strips or fingers, hence the name. To prepare chicken strips, the chicken breast is usually sliced into uniform pieces. The chicken strips are then coated in a seasoned breading or batter, which can include a mixture of flour, breadcrumbs, herbs, and spices. This coating helps to provide a crispy and flavorful outer layer when cooked. Chicken strips can be cooked in various ways, including deep-frying, baking, or pan-frying. Deep-frying is a common method that results in a crispy and golden exterior, while baking or pan-frying can provide a healthier alternative with less oil. Chicken strips are often served as a standalone dish or as part of a meal. They can be enjoyed with a variety of dipping sauces, such as ketchup, barbecue sauce, honey mustard, or ranch dressing. They are a popular choice for appetizers, snacks, or as a main course for both children and adults.', href: '/products/', pic:'../images/berry.png'
-  , attribute: "Chicken-Strips", flavourText:"Indulge in the crispy and succulent delight of our chicken strips. Get ready to experience chicken strip perfection like never before." },
-
-  { id:'5', name: 'Caramel', description: 'Salmon is a type of fish that is highly valued for its flavor, nutritional benefits, and versatility in cooking. It is a species of fish that is native to both freshwater and saltwater environments, and it is known for its distinctive pink flesh. Salmon is rich in omega-3 fatty acids, high-quality protein, and various vitamins and minerals, making it a nutritious choice. It can be prepared in various ways, including grilling, baking, broiling, or pan-searing. The cooking method chosen can depend on personal preference and desired flavoWhen cooked, salmon has a tender and flaky texture with a rich, buttery taste. It pairs well with a wide range of flavors and ingredients, such as lemon, dill, garlic, soy sauce, or honey. It can be served as a main dish alongside vegetables, rice, or potatoes, or it can be used in salads, sandwiches, or sushi.Salmon is not only enjoyed for its taste but also recognized for its health benefits. It is a good source of omega-3 fatty acids, which are known to support heart health and brain function. It is also a good source of protein, which is essential for muscle growth and repair.Overall, salmon is a versatile and nutritious fish that is appreciated for its delicious taste and health benefits.', href: '/products/', pic:'../images/caramel donut.png'
-  , attribute: "Salmon", flavourText:"Immerse yourself in the exquisite flavors of our succulent salmon dish. Prepare to savor the elegance and delectable taste of our exceptional salmon creation." },
-
-  { id:'6', name: 'Coconut', description: 'A shrimp taco is a type of taco that features shrimp as the main protein. It is a popular dish in Mexican and seafood cuisine. To make a shrimp taco, shrimp is typically seasoned with a combination of spices such as chili powder, cumin, garlic, and lime juice. The shrimp can be grilled, sautéed, or fried until cooked through and slightly caramelized. The cooked shrimp is then placed in a tortilla, which is a soft, folded corn or flour-based flatbread. The tortilla can be warmed or toasted before filling. Shrimp tacos are often accompanied by various toppings and garnishes to enhance the flavors and textures. Common toppings include shredded lettuce, diced tomatoes, sliced avocado, chopped onions, cilantro, and a squeeze of lime juice. Additional condiments such as salsa, sour cream, or a spicy sauce like chipotle mayo can be added for extra flavor. Shrimp tacos are known for their combination of savory, tangy, and fresh flavors. They are a versatile dish that can be enjoyed as a light meal or as part of a larger Mexican-inspired feast.', href: '/products/', pic:'../images/coconut.png'
-  , attribute: "Shrimp-Taco", flavourText:"Transport your taste buds to the coastal shores with our mouthwatering shrimp taco. Delight in the succulent, perfectly seasoned shrimp, grilled to perfection and nestled in a warm, soft tortilla." },
-
-  { id:'7', name: 'Lemon', description: 'Steak is a type of meat that is typically cut from beef, although it can also be sourced from other animals such as pork, lamb, or veal. It is known for its tenderness and rich flavor. Steak is usually obtained from the muscles of the animal, which are often well-exercised and contain a higher amount of protein. It is commonly cooked by grilling, broiling, or pan-searing to achieve the desired level of doneness, ranging from rare to well-done. Steak is a popular choice for many meat lovers and is often served as a main course in various cuisines around the world.', href: '/products/', pic:'../images/lemon.png'
-  , attribute: "Steak", flavourText:"Prepare to tantalize your taste buds with the epitome of culinary excellence - our mouthwatering steak. Sourced from the finest cuts of premium beef, each tender slice is meticulously seasoned and expertly grilled to perfection." },
-
-  { id:'8', name: 'Maple Cream', description: 'A taco is a traditional Mexican dish that consists of a tortilla, which is a thin, flatbread made from corn or wheat flour. The tortilla is typically folded or rolled and filled with various ingredients. The most common filling for a taco is seasoned meat, such as beef, chicken, or pork. However, there are also vegetarian options available, with fillings like beans, cheese, or grilled vegetables. Tacos are often garnished with toppings like lettuce, tomatoes, onions, salsa, guacamole, or sour cream to add flavor and texture. They are enjoyed as a handheld food and can be customized to individual preferences. Tacos are popular worldwide and are often served in Mexican restaurants or as street food.', href: '/products/', pic:'../images/Maple-Cream-Donut-min.png'
-  , attribute: "Taco", flavourText:"Get ready to embark on a flavor-packed journey with our mouthwatering tacos. Each bite is a fiesta of vibrant and authentic Mexican flavors, carefully crafted to tantalize your taste buds." },
-
-  { id:'9',name: 'Powder', description: 'Chicken wings are a popular appetizer or main dish made from the wings of chickens. They are typically prepared by separating the wings into two sections, the drum and the flat, and discarding the wingtip. The wings are then seasoned, marinated, or coated in various sauces or spices before being cooked. Common cooking methods for chicken wings include frying, baking, grilling, or even air frying. Chicken wings are known for their tender and juicy meat, and they have a unique combination of crispy skin and flavorful meat. They can be enjoyed with a variety of dipping sauces, such as buffalo sauce, barbecue sauce, teriyaki sauce, or honey mustard. Chicken wings are often served as a finger food at parties, sports events, or as a popular menu item in restaurants specializing in wings. They come in different flavors and heat levels, allowing individuals to choose their preferred level of spiciness.', href: '/products/', pic:'../images/powder.png'
-  , attribute: "Wings", flavourText:"Get ready to soar to new heights of flavor with our tantalizing chicken wings. Each wing is meticulously seasoned and cooked to crispy perfection, creating a mouthwatering combination of tender meat and irresistible crunch." },
-
+  {
+    id:'1' , name: 'Chocolate',
+    description:'A chocolate donut is a delectable and indulgent treat that combines the soft and fluffy texture of a traditional donut with the rich and satisfying taste of chocolate. The base of the donut is typically made from a sweetened dough that is deep-fried to perfection, resulting in a golden-brown exterior with a tender interior. The real star of the show is the chocolate glaze or coating that envelops the donut. This luscious layer is often made from a combination of cocoa powder, confectioners sugar, and milk, creating a smooth and glossy finish. Some variations may include melted chocolate for an even more intense chocolate flavor.', 
+    pic:'../images/chocolate.png',
+    attribute: "Chocolate",
+    flavourText:"Delectable and indulgent treat that combines the soft and fluffy texture of a traditional donut with the rich and satisfying taste of chocolate"
+  },
+  {
+    id:'2',
+    name: 'Sprinkled',
+    description:'A nut-flavored donut is a delectable pastry that combines the rich, savory taste of nuts with the sweet and doughy goodness of a traditional donut. The base of the donut is typically a soft and airy dough, either baked or fried to achieve a delightful texture.The distinguishing feature of a nut-flavored donut lies in its flavor profile. The dough may be infused with nut extracts, such as almond, hazelnut, or pecan, to impart a subtle yet distinctive nuttiness. Alternatively, the donut might be adorned with chopped or ground nuts on the outer layer, providing both texture and a more pronounced nut flavor. The outer layer of the donut may also be coated with a glaze or frosting that complements the nutty taste. For example, a vanilla or maple glaze could enhance the overall flavor profile, creating a harmonious blend of sweetness and nuttiness.',
+    pic:'../images/sprinkle.png',
+    attribute: "Sprinkled",
+    flavourText:"Delectable and indulgent treat that combines the soft and fluffy texture of a traditional donut with the rich and satisfying taste of chocolate" 
+  },
+  {
+    id:'3',
+    name: 'Nutty',
+    description:'The foundation of this delectable pastry is typically a soft and pillowy dough, either baked or fried to achieve a light and fluffy texture. The magic of a sprinkled donut lies in its coating. The outer layer is generously glazed with a smooth and sweet icing, often vanilla-flavored. What sets this donut apart is the abundance of colorful sprinkles that adorn its surface. These tiny, sugary particles come in a variety of shapes and colors, creating a visually appealing and festive appearance.',
+    pic:'../images/nut.png' ,
+    attribute: "Nutty",
+    flavourText:"A nut-flavored donut is a delectable pastry that combines the rich, savory taste of nuts with the sweet and doughy goodness of a traditional donut. The base of the donut is typically a soft and airy dough, either baked or fried to achieve a delightful texture."
+  },
+  {
+    id:'4',
+    name: 'Carmel',
+    description:'The star of the show is the luscious caramel coating that envelops the donut. The caramel is often made by melting sugar until it reaches a deep amber hue, creating a sweet and slightly nutty flavor profile. Some caramel donuts may also have a caramel-flavored glaze or frosting, adding an extra layer of decadence. The caramel coating on the donut provides a glossy and sticky exterior, while the interior remains soft and fluffy. The combination of the sweet, buttery caramel and the tender dough creates a truly indulgent experience with each bite.',
+    pic:'../images/caramel donut.png' ,
+    attribute: "Caramel",
+    flavourText:"A caramel donut is a delicious confection that brings together the sweet and rich flavors of caramel with the soft, pillowy texture of a classic donut."
+  },
+  {
+    id:'5',
+    name: 'Lemon',
+    description:'The base of the donut is typically made from a light and airy dough, either baked or fried to achieve a soft and fluffy consistency. What sets the lemon-flavored donut apart is the infusion of lemon into the dough itself or the addition of a tangy lemon glaze. The outer layer of the donut is often coated with a lemon-flavored icing or glaze, which provides a sweet and slightly tart taste. The glaze may be made with a combination of lemon juice, powdered sugar, and sometimes lemon zest for an extra burst of citrus flavor.',
+    pic:'../images/lemon.png' ,
+    attribute: "Lemon",
+    flavourText:"A lemon-flavored donut is a delightful and refreshing treat that combines the zesty citrus taste of lemons with the soft, pillowy texture of a classic donut."
+  },
+  {
+    id:'6',
+    name: 'Glaze',
+    description:' A glazed donut is a classic and beloved treat that boasts a simple yet irresistible combination of a light and airy dough with a glossy, sweet glaze. This popular confection is often enjoyed for breakfast, as a dessert, or as a delightful snack paired with a cup of coffee. The foundation of a glazed donut is typically made from a soft and yeasted dough, although cake-style dough may be used as well. The dough is either fried or baked to achieve a fluffy and tender texture. The hallmark of a glazed donut is its smooth and shiny outer layer.The glaze is the star of the show, coating the entire surface of the donut. It is usually made from a mixture of powdered sugar, milk, and vanilla extract, creating a sweet and slightly vanilla-flavored coating. The glaze dries to form a thin and crisp shell that contrasts beautifully with the softness of the dough beneath.',
+    pic:'../images/powder.png' ,
+    attribute: "Glazed",
+    flavourText:"A classic and beloved treat that boasts a simple yet irresistible combination of a light and airy dough with a glossy, sweet glaze"
+  },
+  {
+    id:'7',
+    name: 'Coconut',
+    description:"The foundation of a coconut-flavored donut typically consists of a soft and airy dough, either baked or fried to achieve a tender and pillowy consistency. The distinctive coconut flavor is introduced through the use of coconut milk, coconut extract, or shredded coconut in the dough itself. The outer layer of the donut is often coated with a delicious coconut-flavored glaze or icing. This glaze is typically made using a combination of powdered sugar, coconut milk, and sometimes coconut extract, resulting in a sweet and creamy topping that enhances the overall coconut experience.",
+    pic:'../images/coconut.png' ,
+    attribute: "Nutty",
+    flavourText:"A caramel donut is a delicious confection that brings together the sweet and rich flavors of caramel with the soft, pillowy texture of a classic donut."
+  },
+  {
+    id:'8',
+    name: 'Berry',
+    description:'The outer layer of the donut may be coated with a vibrant berry glaze made from berries like strawberries, blueberries, raspberries, or a combination of these. The glaze is often sweetened with powdered sugar and may contain real berry puree, providing both color and a burst of natural fruity flavor. Some berry-flavored donuts might have a fruity filling, such as a berry jam or compote, adding an extra layer of lusciousness to each bite. Additionally, the donut could be adorned with dried berries, berry drizzle, or even a dusting of powdered sugar for a finishing touch.',
+    pic:'../images/berry.png' ,
+    attribute: "Berry",
+    flavourText:"A berry-flavored donut is a delightful fusion of the sweet and tart notes of berries with the soft, pillowy texture of a classic donut. This delectable treat offers a burst of fruity goodness."
+  },
+  {
+    id:'9',
+    name: 'Jam',
+    description:'The base of the donut is typically a light and fluffy dough, either baked or fried to perfection. The highlight of a jam-flavored donut is the incorporation of fruit-flavored jam or preserves. Common jam flavors include strawberry, raspberry, blueberry, or apricot, although there are many possibilities to suit various preferences. The donut may be filled with a generous amount of jam, creating a burst of fruity goodness with each bite. Some variations feature a small hole in the side or the top of the donut, allowing the jam to be piped or injected into the center. The donut may also be coated with a thin layer of powdered sugar or glaze to complement the sweet and tangy notes of the jam.',
+    pic:'../images/jelly.png' ,
+    attribute: "Jam",
+    flavourText:"A jam-flavored donut is a delightful pastry that combines the soft, pillowy texture of a classic donut with the sweet and fruity taste of jam."
+  }
 ];
